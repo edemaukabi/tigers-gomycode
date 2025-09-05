@@ -31,7 +31,7 @@ header {
 }
 
 /* add mobile nav later */
-.desktop-nav a {
+.desktop-nav a, .mobile-nav a {
     color: #FFFFFF;
     text-decoration: none;
     margin-left: 1.5rem;
@@ -43,6 +43,27 @@ header {
 }
 
 /* add mobile styles for header */
+.hamburger {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.mobile-nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    background-color: #333;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    padding: 1rem 2rem;
+    z-index: 10;
+}
+
+.mobile-nav.open {
+    display: none;
+}
 
 .hero {
     background: url("/assets/restaurant-hero-img.jpeg") no-repeat center center/cover;
@@ -52,6 +73,7 @@ header {
     align-items: center;
     text-align: center;
     color: #FFF;
+
 }
 
 .hero-content {
@@ -172,3 +194,46 @@ header {
     text-align: center;
 }
 
+.grid-stores {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.store {
+    background: #f4f4f4;
+    padding: 1.5rem;
+    border-radius: 10px;
+    font-weight: 600;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    background: #222;
+    color: #fff;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+footer .socials a {
+    color: #f4c542;
+    margin: 0 1rem;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .desktop-nav {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .mobile-nav.open {
+        display: flex;
+    }
+}
