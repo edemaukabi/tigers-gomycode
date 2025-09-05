@@ -9,3 +9,9 @@ const footerLinks = [
     {name: "Terms of Service", path: "/terms"},
     {name: "Contact Us", path: "/contact"},
 ]
+
+const newFooterLinks = [
+    {name: "Privacy Policy", path: "/privacy"},
+    {name: "Terms of Service", path: "/terms"},
+    {name: "Contact Us", path: "/contact"},
+]

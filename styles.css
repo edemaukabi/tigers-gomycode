@@ -1,8 +1,109 @@
 body {
-    background-color: blue;
+    background-color: red;
 }
 
-h3 {
-    color: rgb(36, 35, 35);
-    text-align: center;
+* {
+    box-sizing: border-box;
 }
+
+/* header {
+    background-color: blueviolet !important;
+}
+
+#header-one {
+    background-color: yellow;
+}
+
+.header-one {
+    background-color: green;
+}
+
+p {
+    color: red;
+    font-size: 20px;
+}
+
+header p {
+    color: white;
+}
+
+nav ul {
+    background-color: brown;
+} */
+
+
+
+
+/* header {
+    background-color: white;
+} */
+
+header > p {
+    color: red;
+}
+
+
+h1 + p {
+    font-weight: bold;
+    background-color: #333;
+    color: #fff;
+    padding: .5em;
+} 
+
+.btn {
+    background-color: blue;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color: darkblue;
+}
+
+.previous {
+    background-color: lightseagreen;
+    /* padding: 20px; */
+    width: 200px;
+    text-align: center;
+    /* padding-top: 150px;
+    padding-right: 20px;
+    padding-bottom: 30px;
+    padding-left: 20px; */
+    /* padding: 150px 20px 30px 20px; */
+    /* padding: 150px 20px 30px; */
+    /* padding: 20px 40px; */
+    padding: 20px;
+    margin-bottom: 1px;
+
+
+}
+
+.nav-items {
+    background-color: #333;
+    /* margin-top: 1px; */
+    
+    padding: 10px;
+    /* padding: 10px; */
+}
+
+.nav-items li {
+    color: #FFF;
+    width: 100px;
+    height: 50px;
+    margin-bottom: 10px;
+    background-color: red;
+}
+
+.item-3 {
+    /* display: none; */
+    visibility: hidden;
+}
+
+
+
+
+

@@ -1,0 +1,97 @@
+* {
+    box-sizing: border-box;
+    /* margin: 0; */
+    /* padding: 0; */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.header-nav {
+    display: flex;
+    background-color: #ccc;
+    justify-content: space-between;
+    padding: 5px 20px;
+    position: relative;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    /* gap: 20px; */
+    /* background-color: aqua; */
+}
+
+.nav-links li {
+    margin-right: 20px;
+    list-style: none;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.logo {
+    font-size: 24px;
+}
+
+.container {
+    background-color: blue;
+    max-width: 40vw;
+    margin-left: auto;
+    margin-right: auto;
+    height: 80vh;
+    display: flex;
+    flex-wrap: wrap;
+    /* flex-direction: column; */
+    /* justify-content: center; */
+    align-items: center;
+    align-content: center;
+}
+
+.item {
+    margin: 10px;
+    color: white;
+    font-weight: bold;
+    padding: 15px;
+    height: 3rem;
+}
+
+.item-1 {
+    background-color: red;
+}
+
+.item-2 {
+    background-color: rgb(23, 24, 29);
+}
+
+.item-3 {
+    background-color: rgb(148, 28, 106);
+}
+
+.item-4 {
+    background-color: rgb(34, 134, 181);
+}
+
+.item-5 {
+    background-color: red;
+}
+
+.item-6 {
+    background-color: rgb(23, 23, 61);
+}
+
+.item-7 {
+    background-color: rgb(18, 89, 18);
+}
+
+.item-8 {
+    background-color: rgb(51, 47, 47);
+}
+
+.demo {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+}
