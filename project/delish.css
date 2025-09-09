@@ -21,7 +21,10 @@ header {
     background: #222;
     color: #FFF;
     padding: 1rem 2rem;
-    position: relative; /* for use in responsivenes */
+    position: fixed; /* for use in responsivenes */
+    top: 0px;
+    width: 100%;
+    z-index: 99;
 }
 
 .logo {
@@ -235,5 +238,11 @@ footer .socials a {
 
     .mobile-nav.open {
         display: flex;
+    }
+}
+
+@media only screen and (max-width: 550px){
+    .hero-content h1 {
+        font-size: 1.5rem;
     }
 }
