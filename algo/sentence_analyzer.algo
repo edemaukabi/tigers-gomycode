@@ -1,0 +1,24 @@
+ALGORITHM sentence_analyzer
+VAR
+    ch:CHARACTER;
+    length, words, vowels:INTEGER:=0;
+BEGIN
+    Read(ch);
+    WHILE ch<>"." DO
+        length:=length+1
+        
+        if ch=" "THEN 
+            words:=words+1;
+        ENDIF
+
+        IF ch="a" OR ch="e" OR ch="i" OR ch="o" OR ch="u" OR ch="A" OR ch="I" OR ch="E" OR ch="O" OR ch="U" THEN 
+            vowels:=vowels+1;
+        ENDIF
+    ENDWHILE
+    words:=words+1 // last word before the point
+
+    Write("Length of sentence:", length);
+    Write("Number of words:", words);
+    Write("Number of vowels:", vowels);
+
+END
