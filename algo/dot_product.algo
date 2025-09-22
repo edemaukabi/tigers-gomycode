@@ -1,0 +1,42 @@
+FUNCTION dot_product(v1: ARRAY OF REAL, v2: ARRAY OF REAL, n: INTEGER): REAL
+VAR
+    i: INTEGER;
+    ps: REAL := 0;  // stores dot product
+BEGIN
+    // Multiply corresponding elements and add them up
+    FOR i := 1 TO n DO
+        ps := ps + (v1[i] * v2[i]);
+    END FOR;
+    RETURN ps;
+END
+
+
+ALGORITHM check_orthogonal
+VAR
+    n, i: INTEGER;
+    v1, v2: ARRAY[1..100] OF REAL;   // input vectors
+    result: REAL;                    // dot product result
+BEGIN
+    // Read dimension of vectors
+    Read(n);
+
+    // Read first vector
+    FOR i := 1 TO n DO
+        Read(v1[i]);
+    END FOR;
+
+    // Read second vector
+    FOR i := 1 TO n DO
+        Read(v2[i]);
+    END FOR;
+
+    // Call dot_product function
+    result := dot_product(v1, v2, n);
+
+    // Check orthogonality condition
+    IF result = 0 THEN
+        Write("The vectors are orthogonal");
+    ELSE
+        Write("The vectors are not orthogonal");
+    END IF;
+END

@@ -1,0 +1,50 @@
+ALGORITHM sum_distinct_elements
+VAR
+    set1, set2: ARRAY[1..100] OF INTEGER;   // input arrays
+    n1, n2, i, j: INTEGER;                  // sizes and loop counters
+    sum: INTEGER := 0;                      // sum of distinct elements
+    isPresent: BOOLEAN;                     // flag to check duplicates
+BEGIN
+    // Read number of elements in first set
+    Read(n1);
+    FOR i := 1 TO n1 DO
+        Read(set1[i]);
+    END FOR;
+
+    // Read number of elements in second set
+    Read(n2);
+    FOR i := 1 TO n2 DO
+        Read(set2[i]);
+    END FOR;
+
+    // Step 1: Add elements from set1 that are NOT in set2
+    FOR i := 1 TO n1 DO
+        isPresent := FALSE;
+        FOR j := 1 TO n2 DO
+            IF set1[i] = set2[j] THEN
+                isPresent := TRUE;  // found duplicate
+                EXIT;               // break inner loop
+            END IF;
+        END FOR;
+        IF isPresent = FALSE THEN
+            sum := sum + set1[i];   // add unique element
+        END IF;
+    END FOR;
+
+    // Step 2: Add elements from set2 that are NOT in set1
+    FOR i := 1 TO n2 DO
+        isPresent := FALSE;
+        FOR j := 1 TO n1 DO
+            IF set2[i] = set1[j] THEN
+                isPresent := TRUE;  // found duplicate
+                EXIT;
+            END IF;
+        END FOR;
+        IF isPresent = FALSE THEN
+            sum := sum + set2[i];   // add unique element
+        END IF;
+    END FOR;
+
+    // Print final result
+    Write("Sum of distinct elements: ", sum);
+END
