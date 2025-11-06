@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Landing Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+        
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .hero-image {
+            transition: transform 0.3s ease;
+        }
+        
+        .hero-image:hover {
+            transform: scale(1.02);
+        }
+        
+        .cta-button {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.6);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-50 to-slate-100 min-h-screen flex items-center justify-center p-4">
+    <div class="max-w-5xl w-full">
+        <div class="text-center space-y-8">
+            <!-- Hero Image -->
+            <div class="animate-fade-in-up opacity-0" style="animation-delay: 0.2s;">
+                <img 
+                    src="/workspace.jpeg" 
+                    alt="Hero Image" 
+                    class="hero-image w-full h-96 object-cover rounded-3xl shadow-2xl mx-auto"
+                >
+            </div>
+            
+            <!-- Headline -->
+            <div class="animate-fade-in-up opacity-0" style="animation-delay: 0.4s;">
+                <h1 class="text-5xl md:text-7xl font-bold mb-4">
+                    <span class="gradient-text">Transform Your Vision</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
+                    Discover the power of innovation and take your ideas to the next level with our cutting-edge solutions
+                </p>
+            </div>
+            
+            <!-- CTA Button -->
+            <div class="animate-fade-in-up opacity-0" style="animation-delay: 0.6s;">
+                <button 
+                    class="cta-button bg-blue-500 hover:bg-blue-600 text-white font-semibold px-12 py-4 rounded-full text-lg"
+                    onclick="handleCTA()"
+                >
+                    Get Started Today
+                </button>
+                <p class="text-slate-500 mt-4 text-sm">No credit card required • Free 14-day trial</p>
+            </div>
+            
+            <!-- Decorative Elements -->
+            <div class="flex justify-center gap-8 mt-12 animate-fade-in-up opacity-0" style="animation-delay: 0.8s;">
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-slate-800">10k+</div>
+                    <div class="text-slate-600 text-sm">Active Users</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-slate-800">98%</div>
+                    <div class="text-slate-600 text-sm">Satisfaction</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-slate-800">24/7</div>
+                    <div class="text-slate-600 text-sm">Support</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function handleCTA() {
+            alert('Welcome! This would typically navigate to a signup page.');
+        }
+        
+        // Add smooth scroll behavior
+        document.addEventListener('DOMContentLoaded', function() {
+            const button = document.querySelector('.cta-button');
+            button.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-2px)';
+            });
+            button.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>

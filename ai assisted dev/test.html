@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Join the Fun!</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+      @keyframes bounceIn {
+        0% {
+          opacity: 0;
+          transform: scale(0.8) translateY(30px);
+        }
+
+        60% {
+          opacity: 1;
+          transform: scale(1.05) translateY(-5px);
+        }
+
+        100% {
+          transform: scale(1) translateY(0);
+        }
+      }
+
+      @keyframes popIn {
+        0% {
+          opacity: 0;
+          transform: scale(0.9);
+        }
+
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      .animate-bounceIn {
+        animation: bounceIn 0.8s ease-out forwards;
+      }
+
+      .animate-popIn {
+        animation: popIn 0.5s ease-out forwards;
+      }
+    </style>
+  </head>
+
+  <body
+    class="min-h-screen flex items-center justify-center bg-gradient-to-br from-pink-100 via-white to-yellow-100 px-5 py-10"
+  >
+    <div
+      id="newsletterContainer"
+      class="w-full max-w-sm bg-white rounded-3xl shadow-2xl p-6 text-center opacity-0 transform translate-y-4 transition-all duration-700"
+    >
+      <h2 class="text-3xl font-extrabold text-pink-600 mb-2">
+        🎉 Join the Fun!
+      </h2>
+      <p class="text-gray-600 mb-6 text-sm">
+        Get happy little updates, surprises, and goodies right in your inbox 💌
+      </p>
+
+      <form id="newsletterForm" class="flex flex-col gap-3">
+        <input
+          type="email"
+          id="emailInput"
+          placeholder="Your awesome email here..."
+          required
+          class="w-full border border-yellow-300 rounded-full px-5 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-pink-400 opacity-0"
+        />
+
+        <button
+          type="submit"
+          class="w-full bg-gradient-to-r from-pink-500 to-yellow-400 text-white py-2 rounded-full text-sm font-semibold hover:scale-105 transition transform opacity-0"
+        >
+          ✨ Subscribe Now
+        </button>
+      </form>
+
+      <!-- Success message -->
+      <p
+        id="successMessage"
+        class="hidden mt-4 text-green-600 font-medium text-sm"
+      >
+        🎊 Woohoo! You're officially on the list!
+      </p>
+    </div>
+
+    <script>
+      const container = document.getElementById("newsletterContainer");
+      const form = document.getElementById("newsletterForm");
+      const successMessage = document.getElementById("successMessage");
+      const emailInput = document.getElementById("emailInput");
+      const subscribeButton = form.querySelector("button");
+
+      // Animate elements when page loads
+      window.addEventListener("load", () => {
+        container.classList.remove("opacity-0", "translate-y-4");
+        container.classList.add("animate-bounceIn");
+
+        setTimeout(() => {
+          emailInput.classList.add("animate-popIn");
+        }, 400);
+
+        setTimeout(() => {
+          subscribeButton.classList.add("animate-popIn");
+        }, 600);
+      });
+
+      // Show success message on submit
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        successMessage.classList.remove("hidden");
+        successMessage.classList.add("animate-popIn");
+        emailInput.value = "";
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #000;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
+}
+
+.hero {
+  position: relative;
+  height: 100vh;
+  background: url('https://images.unsplash.com/photo-1504198453319-5ce911bafcde?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Dark overlay */
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1;
+}
+
+/* Navigation */
+nav {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 4rem;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  color: #fff;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+nav ul li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 1px;
+  background: #fff;
+  transition: width 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #ccc;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+/* Content */
+.content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding-bottom: 8rem;
+}
+
+.artist-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+}
+
+.tagline {
+  font-size: 1rem;
+  color: #ddd;
+  margin-bottom: 2.5rem;
+}
+
+.btn {
+  display: inline-block;
+  border: 1px solid #fff;
+  padding: 0.8rem 2rem;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border-radius: 2rem;
+}
+
+.btn:hover {
+  background: #fff;
+  color: #000;
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  nav {
+    padding: 1.5rem 2rem;
+  }
+
+  nav ul {
+    gap: 1rem;
+  }
+
+  .artist-name {
+    font-size: 2rem;
+  }
+
+  .tagline {
+    font-size: 0.9rem;
+  }
+
+  .btn {
+    padding: 0.6rem 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 1.2rem;
+  }
+
+  nav ul {
+    display: none; /* Simplify for mobile */
+  }
+
+  .artist-name {
+    font-size: 1.8rem;
+  }
+
+  .content {
+    padding-bottom: 6rem;
+  }
+}
